@@ -1,2 +1,2 @@
 require 'prime'
-p Prime.prime_division(600851475143)[-1][0]
+p 600_851_475_143.prime_division[-1][0]
