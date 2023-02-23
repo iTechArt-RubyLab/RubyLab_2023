@@ -1,8 +1,8 @@
-def SumOfMultipliesOf3Or5(n)
-  i  = 3
+def sum_of_mult(n)
+  i = 3
   result = 0
   while i < n
-    if i % 3 ==0 or i % 5 ==0
+    if i % 3 == 0 or i % 5 == 0
       result += i
     end
     i += 1
@@ -10,4 +10,4 @@ def SumOfMultipliesOf3Or5(n)
   return result
 end
 
-puts SumOfMultipliesOf3Or5(1000)
+puts sum_of_mult(1000)
