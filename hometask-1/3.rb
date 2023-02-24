@@ -1,3 +1,2 @@
 require 'prime'
-NUM = 600851475143
-p Prime.prime_division(NUM).max[0]
+p 600851475143.prime_division.max[0]

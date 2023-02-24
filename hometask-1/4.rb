@@ -1,16 +1,12 @@
 def palindrome?(string)
-  true if string == string.reverse
+  string == string.reverse
 end
 
-def cycle
-  arr = []
-  (100...1000).each do |multiplier_1|
-    (100...1000).each do |multilpier_2|
-      number = multiplier_1 * multilpier_2
-      arr << number if palindrome?(number.to_s)
-    end
+arr = []
+999.downto(100) do |ml_1|
+  999.downto(100) do |ml_2|
+    number = ml_1 * ml_2
+    arr << number if palindrome?(number.to_s)
   end
-  p arr.max
 end
-
-cycle
+p arr.max
