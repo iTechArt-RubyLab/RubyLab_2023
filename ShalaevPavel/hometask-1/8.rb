@@ -25,13 +25,13 @@ max = (0..12).reduce(1) { |product, mult| product * Integer(num[mult]) }
 i = 13
 
 while i < num.length
-  if tmp_max / Integer(num[i - 13]) * Integer(num[i]) > max
+  if (tmp_max / Integer(num[i - 13])) * Integer(num[i]) > max
 
     max = (tmp_max / Integer(num[i - 13])) * Integer(num[i])
     tmp_max = max
     i += 1
   else
-    max = (tmp_max / Integer(num[i - 13])) * Integer(num[i])
+    tmp_max = (tmp_max / Integer(num[i - 13])) * Integer(num[i])
     i += 1
 
   end
