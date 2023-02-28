@@ -3,7 +3,7 @@ def sum_of_mult(n)
   result = 0
   while i < n
 
-    result += i if i % 3 == 0 or i % 5 == 0
+    result += i if i % 3 == 0 || i % 5 == 0
     i += 1
 
   end
