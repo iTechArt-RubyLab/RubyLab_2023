@@ -19,19 +19,19 @@ num = "73167176531330624919225119674426574742355349194934
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450".tr('0', '')
 
-tmp_max = (0..12).reduce(1) { |product, mult| product * Integer(num[mult]) }
-max = (0..12).reduce(1) { |product, mult| product * Integer(num[mult]) }
+tmp_max = (0..12).reduce(1) { |product, mult| product * num[mult].to_i}
+max = (0..12).reduce(1) { |product, mult| product * num[mult].to_i}
 
 i = 13
 
 while i < num.length
-  if (tmp_max / Integer(num[i - 13])) * Integer(num[i]) > max
+  if (tmp_max / num[i - 13].to_i) * num[i].to_i > max
 
-    max = (tmp_max / Integer(num[i - 13])) * Integer(num[i])
+    max = (tmp_max / num[i - 13].to_i) * num[i].to_i
     tmp_max = max
     i += 1
   else
-    tmp_max = (tmp_max / Integer(num[i - 13])) * Integer(num[i])
+    tmp_max = (tmp_max / num[i - 13].to_i) * num[i].to_i
     i += 1
 
   end
