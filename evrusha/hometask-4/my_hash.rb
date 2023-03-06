@@ -7,13 +7,13 @@ class MyHash
   end
 
   def [](key)
-    hash.find { _1[0] == key }&.last
+    find_hash(key)&.last
   end
 
   def []=(key, value)
-    key2 = find_hash(key)
-    if key2
-      key2.replace [key, value]
+    old_hash = find_hash(key)
+    if old_hash
+      old_hash.last = value
     else
       hash << [key, value]
     end
@@ -38,6 +38,6 @@ class MyHash
   private
 
   def find_hash(key)
-    hash.find { _1[0] == key }
+    hash.find { _1.first == key }
   end
 end
