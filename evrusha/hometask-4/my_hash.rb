@@ -39,10 +39,14 @@ class MyHash
   private
 
   def hashy(key)
-    (key.to_s.bytes.sum + key) % ELEMENTS
+    key.hash % ELEMENTS
   end
 
   def find_hash(key)
     @hash[hashy(key)].find { _1.first == key }
   end
 end
+
+a = MyHash.new
+a[:abc] = 'ffdfs'
+p a[:abc]
