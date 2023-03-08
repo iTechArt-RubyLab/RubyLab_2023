@@ -1,9 +1,10 @@
 class MyHash
   include Enumerable
-  attr_reader :hash
+
+  ELEMENTS = 1_000_000
 
   def initialize
-    @hash = []
+    @hash = Array.new(ELEMENTS) { [] }
   end
 
   def [](key)
@@ -13,31 +14,35 @@ class MyHash
   def []=(key, value)
     old_hash = find_hash(key)
     if old_hash
-      old_hash.last = value
+      old_hash[1] = value
     else
-      hash << [key, value]
+      @hash[hashy(key)] << [key, value]
     end
   end
 
   def each(&block)
-    hash.each(&block)
+    @hash.each(&block)
   end
 
   def clear
-    hash.clear
+    @hash.clear
   end
 
   def size
-    hash.size
+    @hash.size
   end
 
   def delete(key)
-    hash.delete(find_hash(key))
+    @hash[hashy(key)].delete(find_hash(key))
   end
 
   private
 
+  def hashy(key)
+    (key.to_s.bytes.sum + key) % ELEMENTS
+  end
+
   def find_hash(key)
-    hash.find { _1.first == key }
+    @hash[hashy(key)].find { _1.first == key }
   end
 end
