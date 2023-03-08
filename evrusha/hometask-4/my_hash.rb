@@ -46,7 +46,3 @@ class MyHash
     @hash[hashy(key)].find { _1.first == key }
   end
 end
-
-a = MyHash.new
-a[:abc] = 'ffdfs'
-p a[:abc]
