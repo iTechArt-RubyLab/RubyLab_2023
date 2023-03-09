@@ -1,10 +1,10 @@
 class MyHash
   include Enumerable
 
-  ELEMENTS = 1_000_000
-
   def initialize
-    @hash = Array.new(ELEMENTS) { [] }
+    @sectors = 100
+    @elements = 10
+    @hash = Array.new(@sectors) { [] }
   end
 
   def [](key)
@@ -16,7 +16,9 @@ class MyHash
     if old_hash
       old_hash[1] = value
     else
-      @hash[hashy(key)] << [key, value]
+      hash_block = @hash[hash_index(key)]
+      create_hash if hash_block.size > @elements
+      hash_block << [key, value]
     end
   end
 
@@ -33,16 +35,23 @@ class MyHash
   end
 
   def delete(key)
-    @hash[hashy(key)].delete(find_hash(key))
+    @hash[hash_index(key)].delete(find_hash(key))
   end
 
   private
 
-  def hashy(key)
-    key.hash % ELEMENTS
+  def create_hash
+    @sectors *= @elements
+    new_hash = Array.new(@sectors) { [] }
+    @hash.flatten(1).each { new_hash[hash_index(_1.first)] << _1 }
+    @hash = new_hash
+  end
+
+  def hash_index(key)
+    key.hash % @sectors
   end
 
   def find_hash(key)
-    @hash[hashy(key)].find { _1.first == key }
+    @hash[hash_index(key)].find { _1.first == key }
   end
 end
