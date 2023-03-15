@@ -10,9 +10,9 @@ class MyHash
     find(key).last
   end
 
-  def[]=(key, value)
+  def []=(key, value)
     h = find(key)
-    if h
+    if !h.empty?
       h[1] = value
     else
       @hash.push([key, value])
