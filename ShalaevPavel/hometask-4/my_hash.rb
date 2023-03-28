@@ -8,8 +8,13 @@ class MyHasH
   end
 
   def []= (key, value)
-    self.container[0].push key
-    self.container[1].push value
+    if self.container[0].include? key
+      index = container[0].find_index(key)
+      container[1][index] = value
+    else
+      self.container[0].push key
+      self.container[1].push value
+    end
   end
 
   def [](key)
