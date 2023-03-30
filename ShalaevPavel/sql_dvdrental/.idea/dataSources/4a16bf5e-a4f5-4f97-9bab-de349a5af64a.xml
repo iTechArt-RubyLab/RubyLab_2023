@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="postgres@localhost">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
+    <root id="1">
+      <ServerVersion>12.14</ServerVersion>
+      <StartupTime>1680160548</StartupTime>
+    </root>
+    <database id="2" parent="1" name="dvdrental">
+      <ObjectId>16420</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <database id="3" parent="1" name="network">
+      <ObjectId>16387</ObjectId>
+      <OwnerName>myuser</OwnerName>
+    </database>
+    <database id="4" parent="1" name="postgres">
+      <Comment>default administrative connection database</Comment>
+      <Current>1</Current>
+      <ObjectId>13465</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <database id="5" parent="1" name="userdb">
+      <ObjectId>16384</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <schema id="6" parent="2" name="information_schema">
+      <ObjectId>13165</ObjectId>
+      <StateNumber>281</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="7" parent="2" name="pg_catalog">
+      <Comment>system catalog schema</Comment>
+      <ObjectId>11</ObjectId>
+      <StateNumber>274</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="8" parent="2" name="public">
+      <Comment>standard public schema</Comment>
+      <Current>1</Current>
+      <ObjectId>2200</ObjectId>
+      <StateNumber>275</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="9" parent="3" name="information_schema">
+      <ObjectId>13165</ObjectId>
+      <StateNumber>281</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="10" parent="3" name="pg_catalog">
+      <Comment>system catalog schema</Comment>
+      <ObjectId>11</ObjectId>
+      <StateNumber>274</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="11" parent="3" name="public">
+      <Comment>standard public schema</Comment>
+      <Current>1</Current>
+      <ObjectId>2200</ObjectId>
+      <StateNumber>275</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="12" parent="4" name="information_schema">
+      <ObjectId>13165</ObjectId>
+      <StateNumber>281</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="13" parent="4" name="pg_catalog">
+      <Comment>system catalog schema</Comment>
+      <ObjectId>11</ObjectId>
+      <StateNumber>274</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="14" parent="4" name="public">
+      <Comment>standard public schema</Comment>
+      <Current>1</Current>
+      <ObjectId>2200</ObjectId>
+      <StateNumber>275</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="15" parent="5" name="information_schema">
+      <ObjectId>13165</ObjectId>
+      <StateNumber>281</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="16" parent="5" name="pg_catalog">
+      <Comment>system catalog schema</Comment>
+      <ObjectId>11</ObjectId>
+      <StateNumber>274</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="17" parent="5" name="public">
+      <Comment>standard public schema</Comment>
+      <Current>1</Current>
+      <ObjectId>2200</ObjectId>
+      <StateNumber>275</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+  </database-model>
+</dataSource>
